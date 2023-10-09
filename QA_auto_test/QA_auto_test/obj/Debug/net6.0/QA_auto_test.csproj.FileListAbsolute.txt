@@ -1,0 +1,14 @@
+D:\QA_auto\QA_auto_test\QA_auto_test\bin\Debug\net6.0\QA_auto_test.exe
+D:\QA_auto\QA_auto_test\QA_auto_test\bin\Debug\net6.0\QA_auto_test.deps.json
+D:\QA_auto\QA_auto_test\QA_auto_test\bin\Debug\net6.0\QA_auto_test.runtimeconfig.json
+D:\QA_auto\QA_auto_test\QA_auto_test\bin\Debug\net6.0\QA_auto_test.dll
+D:\QA_auto\QA_auto_test\QA_auto_test\bin\Debug\net6.0\QA_auto_test.pdb
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\QA_auto_test.GeneratedMSBuildEditorConfig.editorconfig
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\QA_auto_test.AssemblyInfoInputs.cache
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\QA_auto_test.AssemblyInfo.cs
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\QA_auto_test.csproj.CoreCompileInputs.cache
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\QA_auto_test.dll
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\refint\QA_auto_test.dll
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\QA_auto_test.pdb
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\QA_auto_test.genruntimeconfig.cache
+D:\QA_auto\QA_auto_test\QA_auto_test\obj\Debug\net6.0\ref\QA_auto_test.dll
