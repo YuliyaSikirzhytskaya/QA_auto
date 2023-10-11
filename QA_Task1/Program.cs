@@ -2,6 +2,8 @@
 
 using QA_Task1;
 using QA_Task1.Comparers;
+using QA_Task1.Entity;
+using QA_Task1.Service;
 
 VIPOrder order1 = new VIPOrder("note","book", 3752957198645, 5, "Warszawa");
 DiscountOrder order2 = new DiscountOrder(5,"pen", 3752571058783, 1, "Lodz");
@@ -84,3 +86,25 @@ var maxRecord = orderList.GroupBy(x => x.ProductName).Select(y => new
     Count = y.Count(),
 }).OrderByDescending(z => z.Count).FirstOrDefault();
 Console.WriteLine(maxRecord.ProductName);
+
+var deliveryService = new DeliveryService();
+deliveryService.AddOrder(order1);
+deliveryService.AddOrder(order2);
+deliveryService.AddOrder(order3);
+deliveryService.AddOrder(order4);
+deliveryService.AddOrder(order5);
+deliveryService.AddOrder(order6);
+
+var deliveryAuto = new AutoDelivery();
+var deliveryDrone = new DroneDelivery();
+var deliveryMoto = new MotoDelivery();
+var deliveryPedestrian = new PedestrianDelivery();
+deliveryService.AddDelivery(deliveryAuto);
+deliveryService.AddDelivery(deliveryDrone);
+deliveryService.AddDelivery(deliveryMoto);
+deliveryService.AddDelivery(deliveryPedestrian);
+
+deliveryService.DeliveryOrderWithLove(order4);
+deliveryService.DeliveryOrderWithLove(order5);
+deliveryService.DeliveryOrderWithLove(order6);
+

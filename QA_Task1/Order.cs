@@ -71,7 +71,7 @@ namespace QA_Task1
             DeliveryAddress = deliveryAddress;
 
         }
-
+        
         public virtual string GetFullInfo()
         {
                 return $"Product Name: {ProductName}; Phone Number: {PhoneNumber}; Cost: {Cost}; Delivery Address: {DeliveryAddress}";
