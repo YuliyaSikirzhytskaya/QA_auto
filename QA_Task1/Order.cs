@@ -20,6 +20,10 @@ namespace QA_Task1
             }
             set
             {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("value");
+                }
                 _productName = value;
             }
         }
@@ -33,6 +37,8 @@ namespace QA_Task1
             {
                 //if (value.ToString().Length == 13)
                 //{ 
+                if (value != 0 && value.ToString().Length != 13) 
+                    { throw new ArgumentNullException("value");}
                     _phoneNumber = value;
                 //}
             }
@@ -47,6 +53,8 @@ namespace QA_Task1
             {
                 //if (value>0 && value<=1000) 
                 //{
+                if (value <= 0)
+                { throw new ArgumentNullException("value"); }
                 _cost = value;
                 //}
             }
@@ -59,6 +67,10 @@ namespace QA_Task1
             }
             set
             {
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentNullException("value");
+                }
                 _deliveryAddress = value;
             }
         }

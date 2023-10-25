@@ -1,6 +1,6 @@
 ﻿namespace QA_Task1
 {
-    internal class VIPOrder : Order
+    public class VIPOrder : Order
     {
         public string GiftDescription {  get; set; }
         public VIPOrder(string giftDescription,string productName, long phoneNumber, float cost, string deliveryAddress) : base(productName, phoneNumber, cost, deliveryAddress)

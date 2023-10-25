@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QA_Task1.Entity
 {
-    internal class AutoDelivery : IDelivery
+    public class AutoDelivery : IDelivery
     {
         public string DeliveryName = "BeepBeep";
         public void DeliverOrder(Order order)

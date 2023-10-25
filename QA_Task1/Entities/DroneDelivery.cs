@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QA_Task1.Entity
 {
-    internal class DroneDelivery : IDelivery
+    public class DroneDelivery : IDelivery
     {
         public string DeliveryName = "HelicopcerHelicopcer";
         public void DeliverOrder(Order order)

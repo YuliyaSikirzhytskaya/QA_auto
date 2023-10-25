@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QA_Task1
 {
-    internal interface IDelivery
+    public interface IDelivery
     {
         public void DeliverOrder(Order order);
         public DateTime ExpectedDeliveryTime(Order order);

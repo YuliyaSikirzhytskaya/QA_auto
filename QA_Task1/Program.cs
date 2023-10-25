@@ -5,6 +5,7 @@ using QA_Task1.Comparers;
 using QA_Task1.Entity;
 using QA_Task1.Service;
 
+
 VIPOrder order1 = new VIPOrder("note","book", 3752957198645, 5, "Warszawa");
 DiscountOrder order2 = new DiscountOrder(5,"pen", 3752571058783, 1, "Lodz");
 Order order3 = new Order("pencil", 3752571068783, 21, "Gdynia");

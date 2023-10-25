@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace QA_Task1.Service
 {
-    internal class DeliveryService
+    public class DeliveryService
     {
         public List<Order> OrderList = new List<Order>();
         public List<IDelivery> DeliveryList = new List<IDelivery>();
