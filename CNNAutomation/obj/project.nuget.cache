@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "6pSca2f5hzS9ywMKINvrWvhaamMJaynDA5Aupt/E3njsK4dAwAQ0vCOy/QZowNlAnNO1udvm+1j5YeLBbBbzYQ==",
+  "success": true,
+  "projectFilePath": "D:\\QA_auto\\CNNAutomation\\CNNAutomation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pika-\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
+    "C:\\Users\\pika-\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\pika-\\.nuget\\packages\\selenium.webdriver\\4.14.1\\selenium.webdriver.4.14.1.nupkg.sha512",
+    "C:\\Users\\pika-\\.nuget\\packages\\selenium.webdriver.chromedriver\\118.0.5993.7000\\selenium.webdriver.chromedriver.118.0.5993.7000.nupkg.sha512",
+    "C:\\Users\\pika-\\.nuget\\packages\\system.drawing.common\\7.0.0\\system.drawing.common.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
