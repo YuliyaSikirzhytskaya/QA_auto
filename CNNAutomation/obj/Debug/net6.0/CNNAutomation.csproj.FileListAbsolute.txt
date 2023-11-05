@@ -6,9 +6,11 @@ D:\QA_auto\CNNAutomation\bin\Debug\net6.0\CNNAutomation.deps.json
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\CNNAutomation.runtimeconfig.json
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\CNNAutomation.dll
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\CNNAutomation.pdb
+D:\QA_auto\CNNAutomation\bin\Debug\net6.0\SeleniumExtras.PageObjects.dll
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\WebDriver.dll
+D:\QA_auto\CNNAutomation\bin\Debug\net6.0\SeleniumExtras.WaitHelpers.dll
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\System.Drawing.Common.dll
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 D:\QA_auto\CNNAutomation\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll

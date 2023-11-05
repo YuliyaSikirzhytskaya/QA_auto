@@ -2,21 +2,31 @@
 using CNNAutomation;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
-using System.Xml.Linq;
+
 
 
 IWebDriver driver = new ChromeDriver();
+try
+{
 
-CNNHomePage homePage = new CNNHomePage(driver);
+    var menuPointNames = new List<string> { "World", "Travel", "Style", "Sports", "Video", "Health", "Entertainment" };
 
-bool isWorldPageDisplayed = homePage.CheckPageLink("World");
-bool isTravelPageDisplayed = homePage.CheckPageLink("Travel");
-bool isStylePageDisplayed = homePage.CheckPageLink("Style");
-bool isSportsPageDisplayed = homePage.CheckPageLink("Sports");
-bool isVideoPageDisplayed = homePage.CheckPageLink("Video");
+    List<string> results = new List<string>();
 
-Console.WriteLine($"Test result: {isWorldPageDisplayed && isTravelPageDisplayed && isStylePageDisplayed && isSportsPageDisplayed && isVideoPageDisplayed}");
+    CNNHomePage homePage = new CNNHomePage(driver);
 
-driver.Close();
+    foreach (var item in menuPointNames)
+    {
+        results.Add($"Result for {item} is:{homePage.CheckPageLink(item).ToString()}");
+    };
+
+    //bool isWorldPageDisplayed = homePage.CheckPageLink("World");
+    //bool isTravelPageDisplayed = homePage.CheckPageLink("Travel");
+    //bool isStylePageDisplayed = homePage.CheckPageLink("Style");
+    //bool isSportsPageDisplayed = homePage.CheckPageLink("Sports");
+    //bool isVideoPageDisplayed = homePage.CheckPageLink("Video");
+
+    //Console.WriteLine($"Test result: {isWorldPageDisplayed && isTravelPageDisplayed && isStylePageDisplayed && isSportsPageDisplayed && isVideoPageDisplayed}");
+}
+finally { driver.Close(); }
+

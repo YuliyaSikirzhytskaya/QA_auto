@@ -8,11 +8,24 @@
     ".NETCoreApp,Version=v6.0": {
       "CNNAutomation/1.0.0": {
         "dependencies": {
+          "DotNetSeleniumExtras.PageObjects.Core": "4.14.1",
           "Selenium.WebDriver": "4.14.1",
-          "Selenium.WebDriver.ChromeDriver": "118.0.5993.7000"
+          "Selenium.WebDriver.ChromeDriver": "118.0.5993.7000",
+          "SeleniumExtras.WaitHelpers": "1.0.2"
         },
         "runtime": {
           "CNNAutomation.dll": {}
+        }
+      },
+      "DotNetSeleniumExtras.PageObjects.Core/4.14.1": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.14.1"
+        },
+        "runtime": {
+          "lib/net6.0/SeleniumExtras.PageObjects.dll": {
+            "assemblyVersion": "4.14.1.0",
+            "fileVersion": "4.14.1.0"
+          }
         }
       },
       "Microsoft.Win32.SystemEvents/7.0.0": {
@@ -52,6 +65,17 @@
         }
       },
       "Selenium.WebDriver.ChromeDriver/118.0.5993.7000": {},
+      "SeleniumExtras.WaitHelpers/1.0.2": {
+        "dependencies": {
+          "Selenium.WebDriver": "4.14.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/SeleniumExtras.WaitHelpers.dll": {
+            "assemblyVersion": "1.0.2.0",
+            "fileVersion": "1.0.2.0"
+          }
+        }
+      },
       "System.Drawing.Common/7.0.0": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "7.0.0"
@@ -78,6 +102,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "DotNetSeleniumExtras.PageObjects.Core/4.14.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LwKjGyJKwaGO0pmPaWx0kOtJoDiKKYMpundXF3AwqqBcOI86gumvUpjqq/giL8zatUXdecL89wb0U/KZh03p7g==",
+      "path": "dotnetseleniumextras.pageobjects.core/4.14.1",
+      "hashPath": "dotnetseleniumextras.pageobjects.core.4.14.1.nupkg.sha512"
     },
     "Microsoft.Win32.SystemEvents/7.0.0": {
       "type": "package",
@@ -106,6 +137,13 @@
       "sha512": "sha512-P+oMf57Rbt2mKr3k2OFijtg+Vm3xHYe147LWQLqB0aumjKuWxoZVZw1+K7rr9KqdGe646kvIVjtQH0+eheCawA==",
       "path": "selenium.webdriver.chromedriver/118.0.5993.7000",
       "hashPath": "selenium.webdriver.chromedriver.118.0.5993.7000.nupkg.sha512"
+    },
+    "SeleniumExtras.WaitHelpers/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-de7m30nkZZLkfCncYBdluUpM27AR/Vkk4kiA4HRQbV+fZI3ps4qGIeJCuj8TAMXdMfQik5Rno8xPnFBIod+ebg==",
+      "path": "seleniumextras.waithelpers/1.0.2",
+      "hashPath": "seleniumextras.waithelpers.1.0.2.nupkg.sha512"
     },
     "System.Drawing.Common/7.0.0": {
       "type": "package",

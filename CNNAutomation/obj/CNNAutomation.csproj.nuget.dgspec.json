@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "DotNetSeleniumExtras.PageObjects.Core": {
+              "target": "Package",
+              "version": "[4.14.1, )"
+            },
             "Selenium.WebDriver": {
               "target": "Package",
               "version": "[4.14.1, )"
@@ -51,6 +55,10 @@
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
               "version": "[118.0.5993.7000, )"
+            },
+            "SeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             }
           },
           "imports": [
