@@ -8,6 +8,14 @@ namespace CNNAutomationPortalTests
     [TestClass]
     public class CNNHomePageTests
     {
+        IWebDriver _driver;
+
+        [TestInitialize] 
+        public void Initialize()
+        {
+            _driver = new ChromeDriver();
+        }
+
         [TestMethod]
         [DataRow("World")]
         [DataRow("Travel")]
@@ -19,14 +27,36 @@ namespace CNNAutomationPortalTests
 
         public void CorrectMenuPointsLinksTests(string menuItem)
         {
-            IWebDriver driver = new ChromeDriver();
 
-            CNNHomePage homePage = new CNNHomePage(driver);
-
+            CNNHomePage homePage = new CNNHomePage(_driver);
             Assert.IsTrue(homePage.CheckPageLink(menuItem));
 
-            
-            driver.Close();
+        }
+
+        [TestMethod]
+
+        public void CheckSearchPagePisitive()
+        {
+            CNNSearchPage page = new CNNSearchPage(_driver);
+            var results = page.GetSearchResults("Milan");
+            var filteredResults = results.Where(x => x.Contains("Milan")).ToList();
+            Assert.IsTrue(filteredResults.Count >= filteredResults.Count/ 2);
+        }
+
+        [TestMethod]
+
+        public void CheckSearchPageNegative()
+        {
+            CNNSearchPage page = new CNNSearchPage(_driver);
+            var results = page.GetSearchResults("gggggggg");
+            var filteredResults = results.Where(x => x.Contains("Milan")).ToList();
+            Assert.IsTrue(results.Count == 0);
+        }
+
+        [TestCleanup] 
+        public void Cleanup()
+        {
+            _driver.Close();
         }
     }
 }
