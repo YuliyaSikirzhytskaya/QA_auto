@@ -34,10 +34,6 @@ namespace CNNAutomation
             var searchResults = _webDriver.FindElements(By.XPath(SEARCH_RESULTS_XPATH));
             return searchResults.Select(x => x.Text).ToList();
             
-
-
-            //var searchButton = _webDriver.FindElement(By.XPath(SEARCH_BUTTON_XPATH));
-            //searchButton.Click();
         }
 
     }

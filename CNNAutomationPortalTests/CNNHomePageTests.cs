@@ -56,7 +56,7 @@ namespace CNNAutomationPortalTests
         [TestCleanup] 
         public void Cleanup()
         {
-            _driver.Close();
+            _driver.Dispose();
         }
     }
 }

@@ -19,32 +19,9 @@ namespace CNNAutomation
 
         public bool CheckPageLink(string menuPointName)
         {
-         
-            var element = GetElementsByXpath(MENU_POINTS_XPATH).Where(x => x.Text == menuPointName).First();
+            ClickMenuPoint(menuPointName);
+          
 
-            string keyWord = String.Empty;
-
-            if (menuPointName == "Sports")
-            {
-                keyWord = "sport";
-            }
-            else
-            {
-                keyWord = menuPointName.ToLower();
-            }
-
-            element.Click();
-
-            //IWebElement menuItem = _webDriver.FindElement(By.LinkText(menuPointName));
-
-            //string title = _webDriver.Title;
-            //string url = _webDriver.Url;
-
-            ////return to homePage
-            ////_webDriver.Url = HOME_URL;
-            //_webDriver.Navigate().Back();
-
-            return true;//title.ToLower().Contains(keyWord) && url.Contains(keyWord);
-        }
+            return IsTitleContains(menuPointName);
     }
 }
