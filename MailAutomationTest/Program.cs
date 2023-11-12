@@ -11,7 +11,7 @@ namespace MailAutomationTest
         
         static void Main(string[] args)
         {
-            IWebDriver driver = new ChromeDriver();
+            IWebDriver driver1 = new ChromeDriver();
 
             const string MAIN_PAGE = "https://www.google.com/intl/ru/gmail/about/";
             const string LOGIN_1 = "prumpkinTest1@gmail.com";
@@ -23,22 +23,50 @@ namespace MailAutomationTest
             const string BUTTON_NEXT_XPATH = "//div[contains(@id, 'identifierNext')]";
             const string BUTTON_NEXT_PASS_XPATH = "//div[contains(@id, 'passwordNext')]";
             const string NEW_LETTER = "//div[contains(@class, 'T-I T-I-KE L3')]";
+            const string TITLE_PEQUEST = "Hello, Frumpkin";
+            const string BODY_LETTER = "Hello dear friend! I have a proposition for you.";
 
-            var loginPage = new LoginPage(driver, MAIN_PAGE);
+            var loginPage = new LoginPage(driver1, MAIN_PAGE);
 
             loginPage.ClickButtonLogin();
-            loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
+            //loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
+            //loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH); 
+            //loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);
+            //loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
+
+
+            //var mainPage = new MainPage(driver);
+            //mainPage.ClickButtonLogin(NEW_LETTER);
+            //var bodyLetter = new BodyLetter(driver);
+            //bodyLetter.PopulateAndSendLetter(LOGIN_2, TITLE_PEQUEST, BODY_LETTER);
+
+
+            //loginPage.AccountExit();
+            //loginPage.ClickButtonLogin();
+            //loginPage.ChangeAccount();
+            //Thread.Sleep(5000);
+            loginPage.FieldUpdate(LOGIN_2, LOGIN_BUTTON_XPATH);
             loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
-            loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);
+            loginPage.FieldUpdate(PASS_2, PASS_BUTTON_XPATH);
             loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
+            Thread.Sleep(3000);
+            var mainPage = new MainPage(driver1);
+            mainPage.CheckLetter();
 
-            var mainPage = new MainPage(driver);
-            mainPage.ClickButtonLogin(NEW_LETTER);
-            var bodyLetter = new BodyLetter(driver);
-            bodyLetter.PopulateAndSendLetter(LOGIN_2, "","");
+            driver1.Close();
+
+            //IWebDriver driver2 = new ChromeDriver();
+
+            //var loginPage2 = new LoginPage(driver2, MAIN_PAGE);
+            //loginPage2.ClickButtonLogin();
+            //loginPage2.FieldUpdate(LOGIN_2, LOGIN_BUTTON_XPATH);
+            //loginPage2.ClickButtonLogin(BUTTON_NEXT_XPATH);
+            //loginPage2.FieldUpdate(PASS_2, PASS_BUTTON_XPATH);
+            //loginPage2.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
 
 
-            driver.Close();
+
+            //driver2.Close();
 
         }
     }

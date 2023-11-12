@@ -11,17 +11,17 @@ namespace MailAutomationTest
 {
     public class MailBasePage
     {
-        IWebDriver _webDriver;
-        WebDriverWait _wait;
+        public IWebDriver WebDriver { get; private set; }
+        public WebDriverWait Wait { get; private set; }
 
         const string BUTTON_LOGIN = "//a[contains(text(),'Войти')]";
 
         public MailBasePage(IWebDriver driver, string URL)
         {
-            _webDriver = driver;
-            _webDriver.Url = URL;
-            _webDriver.Manage().Window.Maximize();
-            _wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            WebDriver = driver;
+            WebDriver.Url = URL;
+            WebDriver.Manage().Window.Maximize();
+            Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
             //IWebElement cookie = _webDriver.FindElement(By.Id("glue-cookie-notification-bar-1"));
             //cookie.Click();
 
@@ -29,7 +29,7 @@ namespace MailAutomationTest
 
         public IWebElement GetElementByXpath(string xpath)
         {
-            return _wait.Until(ExpectedConditions.ElementExists(By.XPath(xpath)));
+            return Wait.Until(ExpectedConditions.ElementExists(By.XPath(xpath)));
         }
         public void ClickButtonLogin()
         {
@@ -47,5 +47,6 @@ namespace MailAutomationTest
 
 
         }
+
     }
 }
