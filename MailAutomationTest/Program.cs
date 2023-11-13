@@ -26,6 +26,7 @@ namespace MailAutomationTest
             const string TITLE_PEQUEST = "Hello, Frumpkin";
             const string BODY_LETTER = "Hello dear friend! I have a proposition for you.";
 
+
             var loginPage = new LoginPage(driver1, MAIN_PAGE);
 
             loginPage.ClickButtonLogin();
@@ -53,21 +54,18 @@ namespace MailAutomationTest
             var mainPage = new MainPage(driver1);
             mainPage.CheckLetter();
 
+            loginPage.AccountExit();
+            loginPage.ClickButtonLogin();
+            loginPage.ChangeAccount();
+            Thread.Sleep(5000);
+
+            loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
+            loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
+            loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);
+            loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
+            
+
             driver1.Close();
-
-            //IWebDriver driver2 = new ChromeDriver();
-
-            //var loginPage2 = new LoginPage(driver2, MAIN_PAGE);
-            //loginPage2.ClickButtonLogin();
-            //loginPage2.FieldUpdate(LOGIN_2, LOGIN_BUTTON_XPATH);
-            //loginPage2.ClickButtonLogin(BUTTON_NEXT_XPATH);
-            //loginPage2.FieldUpdate(PASS_2, PASS_BUTTON_XPATH);
-            //loginPage2.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
-
-
-
-            //driver2.Close();
-
         }
     }
 }
