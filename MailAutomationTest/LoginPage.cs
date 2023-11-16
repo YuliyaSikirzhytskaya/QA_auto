@@ -1,20 +1,13 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.DevTools.V117.Network;
-using SeleniumExtras.WaitHelpers;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MailAutomationTest
 {
     public class LoginPage : MailBasePage
     {
         const string ACCOUNT_BUTTON = "//a[contains(@aria-label, \"Аккаунт Google:\")]";
-        const string EXIT_BUTTON = "//div[contains(text(),'Выйти')]";
+        const string EXIT_LINK = "//a[@class='gb_d gb_Da gb_H']";
         const string CHANGE_ACCOUNT = "//div[contains(text(), 'Сменить аккаунт')]";
+        const string SIGNOUT_BUTTON = "//*[@id='signout']";
         public LoginPage(IWebDriver driver,string  URL) : base(driver, URL)
         {
 
@@ -23,8 +16,8 @@ namespace MailAutomationTest
         public void FieldUpdate(string infoText,string xpath)
         {
             var element = GetElementByXpath(xpath);
+            Thread.Sleep(1000);
             element.SendKeys(infoText);
-            
         }
 
         public void AccountExit() 
@@ -32,10 +25,10 @@ namespace MailAutomationTest
             var element = GetElementByXpath(ACCOUNT_BUTTON);
             element.Click();
             
-            var elm = GetElementByXpath("//a[@class='gb_d gb_Da gb_H']");
+            var elm = GetElementByXpath(EXIT_LINK);
             WebDriver.Url = elm.GetAttribute("href");
 
-            element = GetElementByXpath("//*[@id='signout']");
+            element = GetElementByXpath(SIGNOUT_BUTTON);
             element.Click();
         }
 
@@ -43,7 +36,6 @@ namespace MailAutomationTest
         {
             var element = GetElementByXpath(CHANGE_ACCOUNT);
             element.Click();
-            
         }
     }
 }

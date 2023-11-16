@@ -1,50 +1,57 @@
 ﻿using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MailAutomationTest
 {
     public class MainPage : MailBasePage
     {
-        const string BODY_MESSAGE_REPLY = "Hello, Prumpkin. I'm ready.";
+        const string BODY_MESSAGE_REPLY_Prumpkin = "Hello, Prumpkin. I'm ready.";
+        const string TITLE_MESSAGE = "//h2[contains(text(), '";
+        const string BODY_MESSAGE = "//div[contains(text(), '";
+        const string UNREAD_LETTER = "//tr[contains(@class, 'zA zE')]";
+        const string REPLY_BUTTON = "//span[contains(@class, 'ams bkH')]";
+        const string REPLY_BODY = "//div[contains(@aria-label, 'Текст письма')]";
+        const string SEND_BUTTON = "//div[contains(@role, 'button') and contains(@class, 'T-I J-J5-Ji aoO v7 T-I-atl L3')]";
+        const string INCOMING_MESSAGE = "//div[contains(@data-tooltip, 'Входящие')]";
         public MainPage(IWebDriver driver) : base(driver, driver.Url)
         {
 
         }
 
-        public bool CheckLetter(int retry = 0) 
+        public bool CheckLetter(string title, string body, int retry = 0) 
         {
             if (retry > 20) { return false; }
 
-            var element = WebDriver.FindElements(By.XPath("//tr[contains(@class, 'zA zE')]")).FirstOrDefault();
+            var element = WebDriver.FindElements(By.XPath(UNREAD_LETTER)).FirstOrDefault();
 
             if (element != null)
             {
                 element.Click();
-                var title = GetElementByXpath("//h2[contains(text(), 'Hello, Frumpkin')]").Text;
-                var body = GetElementByXpath("//div[contains(text(), 'Hello dear friend! I have a proposition for you.')]").Text;
-                if (!string.IsNullOrEmpty(title) && !string.IsNullOrEmpty(body)) 
+                var titleToCheck = GetElementByXpath(TITLE_MESSAGE + title + "')]").Text;
+                var bodyToCheck = GetElementByXpath(BODY_MESSAGE + body + "')]").Text;
+                if (!string.IsNullOrEmpty(titleToCheck) && !string.IsNullOrEmpty(bodyToCheck)) 
                 {
-                    GetElementByXpath("//span[contains(@class, 'ams bkH')]").Click();
-                    var replyMessage = WebDriver.FindElement(By.XPath("//div[contains(@aria-label, 'Текст письма')]"));
-                    replyMessage.SendKeys(BODY_MESSAGE_REPLY);
-                    replyMessage.Click();
-                    GetElementByXpath("//div[contains(@role, 'button') and contains(@class, 'T-I J-J5-Ji aoO v7 T-I-atl L3')]").Click();
                     return true;
                 }
-                GetElementByXpath("//div[contains(@data-tooltip, 'Входящие')]").Click();
-                CheckLetter();
+                GetElementByXpath(INCOMING_MESSAGE).Click();
+                CheckLetter(title, body);
             }
 
             Thread.Sleep(30000);
 
-            GetElementByXpath("//div[contains(@data-tooltip, 'Входящие')]").Click();
-            CheckLetter(++retry);
+            GetElementByXpath(INCOMING_MESSAGE).Click();
+            CheckLetter(title, body, ++retry);
 
             return false;
+        }
+
+        public void ReplyLetter() 
+        {
+            GetElementByXpath(REPLY_BUTTON).Click();
+            var replyMessage = WebDriver.FindElement(By.XPath(REPLY_BODY));
+            replyMessage.SendKeys(BODY_MESSAGE_REPLY_Prumpkin);
+            replyMessage.Click();
+            GetElementByXpath(SEND_BUTTON).Click();
+
         }
     }
 }

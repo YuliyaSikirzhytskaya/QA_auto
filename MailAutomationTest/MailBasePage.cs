@@ -1,10 +1,5 @@
 ﻿using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SeleniumExtras.WaitHelpers;
 
 namespace MailAutomationTest
@@ -22,9 +17,6 @@ namespace MailAutomationTest
             WebDriver.Url = URL;
             WebDriver.Manage().Window.Maximize();
             Wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
-            //IWebElement cookie = _webDriver.FindElement(By.Id("glue-cookie-notification-bar-1"));
-            //cookie.Click();
-
         }
 
         public IWebElement GetElementByXpath(string xpath)
@@ -33,19 +25,13 @@ namespace MailAutomationTest
         }
         public void ClickButtonLogin()
         {
-
             var element = GetElementByXpath(BUTTON_LOGIN);
             element.Click();
-
-
         }
         public void ClickButtonLogin(string xpath)
         {
-
             var element = GetElementByXpath(xpath);
             element.Click();
-
-
         }
 
     }

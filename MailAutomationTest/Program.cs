@@ -1,8 +1,5 @@
-﻿using OpenQA.Selenium.Support.UI;
-using OpenQA.Selenium;
-using SeleniumExtras.WaitHelpers;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System.Security.Cryptography.X509Certificates;
 
 namespace MailAutomationTest
 {
@@ -11,7 +8,7 @@ namespace MailAutomationTest
         
         static void Main(string[] args)
         {
-            IWebDriver driver1 = new ChromeDriver();
+            IWebDriver driver = new ChromeDriver();
 
             const string MAIN_PAGE = "https://www.google.com/intl/ru/gmail/about/";
             const string LOGIN_1 = "prumpkinTest1@gmail.com";
@@ -26,46 +23,47 @@ namespace MailAutomationTest
             const string TITLE_PEQUEST = "Hello, Frumpkin";
             const string BODY_LETTER = "Hello dear friend! I have a proposition for you.";
 
-
-            var loginPage = new LoginPage(driver1, MAIN_PAGE);
+            var loginPage = new LoginPage(driver, MAIN_PAGE);
 
             loginPage.ClickButtonLogin();
-            //loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
-            //loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH); 
-            //loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);
-            //loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
+            loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
+            loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
+            loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);
+            loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
 
+            var mainPage = new MainPage(driver);
+            mainPage.ClickButtonLogin(NEW_LETTER);
+            var bodyLetter = new BodyLetter(driver);
+            bodyLetter.PopulateAndSendLetter(LOGIN_2, TITLE_PEQUEST, BODY_LETTER);
 
-            //var mainPage = new MainPage(driver);
-            //mainPage.ClickButtonLogin(NEW_LETTER);
-            //var bodyLetter = new BodyLetter(driver);
-            //bodyLetter.PopulateAndSendLetter(LOGIN_2, TITLE_PEQUEST, BODY_LETTER);
+            loginPage.AccountExit();
+            loginPage.ClickButtonLogin();
+            loginPage.ChangeAccount();
+            Thread.Sleep(3000);
 
-
-            //loginPage.AccountExit();
-            //loginPage.ClickButtonLogin();
-            //loginPage.ChangeAccount();
-            //Thread.Sleep(5000);
             loginPage.FieldUpdate(LOGIN_2, LOGIN_BUTTON_XPATH);
             loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
             loginPage.FieldUpdate(PASS_2, PASS_BUTTON_XPATH);
             loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
             Thread.Sleep(3000);
-            var mainPage = new MainPage(driver1);
-            mainPage.CheckLetter();
+      
+            var mailReceived = mainPage.CheckLetter("Hello, Frumpkin", "Hello dear friend! I have a proposition for you.");
+            if (mailReceived)
+            {
+                mainPage.ReplyLetter();
 
-            loginPage.AccountExit();
-            loginPage.ClickButtonLogin();
-            loginPage.ChangeAccount();
-            Thread.Sleep(5000);
+                loginPage.AccountExit();
+                loginPage.ChangeAccount();
+                Thread.Sleep(3000);
 
-            loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
-            loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
-            loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);
-            loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
-            
+                loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
+                loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
+                loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);
+                loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
+                mainPage.CheckLetter("Hello, Frumpkin", "Hello, Prumpkin. I");
+            }
 
-            driver1.Close();
+            driver.Close();
         }
     }
 }
