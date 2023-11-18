@@ -15,8 +15,9 @@ namespace MailAutomationTest
 
         public void FieldUpdate(string infoText,string xpath)
         {
+            
             var element = GetElementByXpath(xpath);
-            Thread.Sleep(1000);
+            Thread.Sleep(3000);
             element.SendKeys(infoText);
         }
 

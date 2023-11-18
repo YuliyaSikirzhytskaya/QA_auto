@@ -33,15 +33,13 @@ namespace MailAutomationTest
                     return true;
                 }
                 GetElementByXpath(INCOMING_MESSAGE).Click();
-                CheckLetter(title, body);
+                return CheckLetter(title, body);
             }
 
             Thread.Sleep(30000);
 
             GetElementByXpath(INCOMING_MESSAGE).Click();
-            CheckLetter(title, body, ++retry);
-
-            return false;
+            return CheckLetter(title, body, ++retry);
         }
 
         public void ReplyLetter() 
