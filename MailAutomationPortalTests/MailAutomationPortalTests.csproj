@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MailAutomationTest\MailAutomationTest.csproj" />
+    <ProjectReference Include="..\MailAutomationTest\MailAutomation.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "flnk2ckLAjcXjAlV0U29tWjTinOni+6jDlFfp1ghK+p74PtYTZc03Bp+ifwbVWHkbfYyOixeQmGof6B1N2yULg==",
+  "dgSpecHash": "Adg3MR1poAhgTv8g/QNeyyFoG8gnu+JMVwelB8meWMiJHVB4Kso7/3Bl4jjPobCkl3Jy8peBJexJNnhN6mGQxQ==",
   "success": true,
-  "projectFilePath": "D:\\QA_auto\\MailAutomationTest\\MailAutomationTest.csproj",
+  "projectFilePath": "D:\\QA_auto\\MailAutomationTest\\MailAutomation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pika-\\.nuget\\packages\\dotnetseleniumextras.pageobjects.core\\4.14.1\\dotnetseleniumextras.pageobjects.core.4.14.1.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
-    "C:\\Users\\pika-\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\pika-\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\selenium.webdriver\\4.15.0\\selenium.webdriver.4.15.0.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\selenium.webdriver.chromedriver\\119.0.6045.10500\\selenium.webdriver.chromedriver.119.0.6045.10500.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\seleniumextras.waithelpers\\1.0.2\\seleniumextras.waithelpers.1.0.2.nupkg.sha512",

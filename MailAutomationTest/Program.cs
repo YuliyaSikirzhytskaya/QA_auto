@@ -19,7 +19,6 @@ namespace MailAutomationTest
             const string PASS_BUTTON_XPATH = "//input[contains(@autocomplete, 'current-password')]";
             const string BUTTON_NEXT_XPATH = "//div[contains(@id, 'identifierNext')]";
             const string BUTTON_NEXT_PASS_XPATH = "//div[contains(@id, 'passwordNext')]";
-            const string NEW_LETTER = "//div[contains(@class, 'T-I T-I-KE L3')]";
             const string TITLE_PEQUEST = "Hello, Frumpkin";
             const string BODY_LETTER = "Hello dear friend! I have a proposition for you.";
 
@@ -32,20 +31,18 @@ namespace MailAutomationTest
             loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
 
             var mainPage = new MainPage(driver);
-            mainPage.ClickButtonLogin(NEW_LETTER);
+            mainPage.ClickButtonLogin();
             var bodyLetter = new BodyLetter(driver);
             bodyLetter.PopulateAndSendLetter(LOGIN_2, TITLE_PEQUEST, BODY_LETTER);
 
             loginPage.AccountExit();
             loginPage.ClickButtonLogin();
             loginPage.ChangeAccount();
-            Thread.Sleep(3000);
-
+            
             loginPage.FieldUpdate(LOGIN_2, LOGIN_BUTTON_XPATH);
             loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
             loginPage.FieldUpdate(PASS_2, PASS_BUTTON_XPATH);
             loginPage.ClickButtonLogin(BUTTON_NEXT_PASS_XPATH);
-            Thread.Sleep(3000);
       
             var mailReceived = mainPage.CheckLetter("Hello, Frumpkin", "Hello dear friend! I have a proposition for you.");
             if (mailReceived)
@@ -54,8 +51,7 @@ namespace MailAutomationTest
 
                 loginPage.AccountExit();
                 loginPage.ChangeAccount();
-                Thread.Sleep(3000);
-
+               
                 loginPage.FieldUpdate(LOGIN_1, LOGIN_BUTTON_XPATH);
                 loginPage.ClickButtonLogin(BUTTON_NEXT_XPATH);
                 loginPage.FieldUpdate(PASS_1, PASS_BUTTON_XPATH);

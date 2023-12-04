@@ -12,6 +12,7 @@ namespace MailAutomationTest
         const string REPLY_BODY = "//div[contains(@aria-label, 'Текст письма')]";
         const string SEND_BUTTON = "//div[contains(@role, 'button') and contains(@class, 'T-I J-J5-Ji aoO v7 T-I-atl L3')]";
         const string INCOMING_MESSAGE = "//div[contains(@data-tooltip, 'Входящие')]";
+        const string NEW_LETTER = "//div[contains(@class, 'T-I T-I-KE L3')]";
         public MainPage(IWebDriver driver) : base(driver, driver.Url)
         {
 
@@ -21,7 +22,7 @@ namespace MailAutomationTest
         {
             if (retry > 20) { return false; }
 
-            var element = WebDriver.FindElements(By.XPath(UNREAD_LETTER)).FirstOrDefault();
+            var element = FindFirstElementsByXpath(UNREAD_LETTER);
 
             if (element != null)
             {
@@ -41,11 +42,15 @@ namespace MailAutomationTest
             GetElementByXpath(INCOMING_MESSAGE).Click();
             return CheckLetter(title, body, ++retry);
         }
-
+        public void ClickButtonLogin()
+        {
+            var element = GetElementByXpath(NEW_LETTER);
+            element.Click();
+        }
         public void ReplyLetter() 
         {
             GetElementByXpath(REPLY_BUTTON).Click();
-            var replyMessage = WebDriver.FindElement(By.XPath(REPLY_BODY));
+            var replyMessage = FindElementByXpath(REPLY_BODY);
             replyMessage.SendKeys(BODY_MESSAGE_REPLY_Prumpkin);
             replyMessage.Click();
             GetElementByXpath(SEND_BUTTON).Click();

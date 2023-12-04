@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "df4qhQN3VEEliqhjEOsHmjaRhNXoF+MAWdCEilPryw2Z2131dY7tJIRQKlhKbfJjA0oW8K+ozrnTCpoYgS6J6g==",
+  "dgSpecHash": "FbLb/r2pLZ5Hv3BWWXvBB5MVM7qDuBdnSWBwhqY8R5nJ/T2bJz2iKR2OGeklc9JEdJasK1xCBcdKsc4uqRc1XA==",
   "success": true,
   "projectFilePath": "D:\\QA_auto\\MailAutomationPortalTests\\MailAutomationPortalTests.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,7 @@
     "C:\\Users\\pika-\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\mstest.testadapter\\2.2.10\\mstest.testadapter.2.2.10.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\mstest.testframework\\2.2.10\\mstest.testframework.2.2.10.nupkg.sha512",
-    "C:\\Users\\pika-\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\pika-\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\nuget.frameworks\\5.11.0\\nuget.frameworks.5.11.0.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\pika-\\.nuget\\packages\\selenium.webdriver\\4.15.0\\selenium.webdriver.4.15.0.nupkg.sha512",

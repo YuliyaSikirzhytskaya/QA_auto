@@ -1,0 +1,27 @@
+﻿MailBasePage to FindElementByName was found
+MailBasePage subjectbox FindElementByName was found
+MailBasePage //div[contains(@aria-label, 'Текст письма')] FindElementByXpath was found
+MailBasePage //div[contains(@data-tooltip, 'Отправить')] FindElementByXpath was found
+MailBasePage Redirected to https://accounts.google.com/SignOutOptions?hl=ru&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
+MailBasePage //tr[contains(@class, 'zA zE')] FindFirstElementsByXpath was found
+MailBasePage //div[contains(@aria-label, 'Текст письма')] FindElementByXpath was found
+MailBasePage Redirected to https://accounts.google.com/SignOutOptions?hl=ru&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
+MailBasePage //tr[contains(@class, 'zA zE')] FindFirstElementsByXpath was found
+MailBasePage to FindElementByName was found
+MailBasePage subjectbox FindElementByName was found
+MailBasePage //div[contains(@aria-label, 'Текст письма')] FindElementByXpath was found
+MailBasePage //div[contains(@data-tooltip, 'Отправить')] FindElementByXpath was found
+MailBasePage Redirected to https://accounts.google.com/SignOutOptions?hl=ru&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
+MailBasePage //tr[contains(@class, 'zA zE')] FindFirstElementsByXpath was found
+MailBasePage //div[contains(@aria-label, 'Текст письма')] FindElementByXpath was found
+MailBasePage Redirected to https://accounts.google.com/SignOutOptions?hl=ru&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
+MailBasePage //tr[contains(@class, 'zA zE')] FindFirstElementsByXpath was found
+MailBasePage to FindElementByName was found
+MailBasePage subjectbox FindElementByName was found
+MailBasePage //div[contains(@aria-label, 'Текст письма')] FindElementByXpath was found
+MailBasePage //div[contains(@data-tooltip, 'Отправить')] FindElementByXpath was found
+MailBasePage Redirected to https://accounts.google.com/SignOutOptions?hl=ru&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
+MailBasePage //tr[contains(@class, 'zA zE')] FindFirstElementsByXpath was found
+MailBasePage //div[contains(@aria-label, 'Текст письма')] FindElementByXpath was found
+MailBasePage Redirected to https://accounts.google.com/SignOutOptions?hl=ru&continue=https://mail.google.com/mail/&service=mail&ec=GBRAFw
+MailBasePage //tr[contains(@class, 'zA zE')] FindFirstElementsByXpath was found

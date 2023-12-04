@@ -8,6 +8,7 @@ namespace MailAutomationTest
         const string EXIT_LINK = "//a[@class='gb_d gb_Da gb_H']";
         const string CHANGE_ACCOUNT = "//div[contains(text(), 'Сменить аккаунт')]";
         const string SIGNOUT_BUTTON = "//*[@id='signout']";
+        const string BUTTON_LOGIN = "//a[contains(text(),'Войти')]";
         public LoginPage(IWebDriver driver,string  URL) : base(driver, URL)
         {
 
@@ -17,17 +18,25 @@ namespace MailAutomationTest
         {
             
             var element = GetElementByXpath(xpath);
-            Thread.Sleep(3000);
             element.SendKeys(infoText);
         }
-
+        public void ClickButtonLogin()
+        {
+            var element = GetElementByXpath(BUTTON_LOGIN);
+            element.Click();
+        }
+        public void ClickButtonLogin(string xpath)
+        {
+            var element = GetElementByXpath(xpath);
+            element.Click();
+        }
         public void AccountExit() 
         {
             var element = GetElementByXpath(ACCOUNT_BUTTON);
             element.Click();
             
             var elm = GetElementByXpath(EXIT_LINK);
-            WebDriver.Url = elm.GetAttribute("href");
+            RedirectByUrl(elm.GetAttribute("href"));
 
             element = GetElementByXpath(SIGNOUT_BUTTON);
             element.Click();

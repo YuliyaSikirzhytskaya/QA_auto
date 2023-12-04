@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\QA_auto\\MailAutomationTest\\MailAutomationTest.csproj": {
-                "projectPath": "D:\\QA_auto\\MailAutomationTest\\MailAutomationTest.csproj"
+              "D:\\QA_auto\\MailAutomationTest\\MailAutomation.csproj": {
+                "projectPath": "D:\\QA_auto\\MailAutomationTest\\MailAutomation.csproj"
               }
             }
           }
@@ -93,12 +93,12 @@
         }
       }
     },
-    "D:\\QA_auto\\MailAutomationTest\\MailAutomationTest.csproj": {
+    "D:\\QA_auto\\MailAutomationTest\\MailAutomation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\QA_auto\\MailAutomationTest\\MailAutomationTest.csproj",
-        "projectName": "MailAutomationTest",
-        "projectPath": "D:\\QA_auto\\MailAutomationTest\\MailAutomationTest.csproj",
+        "projectUniqueName": "D:\\QA_auto\\MailAutomationTest\\MailAutomation.csproj",
+        "projectName": "MailAutomation",
+        "projectPath": "D:\\QA_auto\\MailAutomationTest\\MailAutomation.csproj",
         "packagesPath": "C:\\Users\\pika-\\.nuget\\packages\\",
         "outputPath": "D:\\QA_auto\\MailAutomationTest\\obj\\",
         "projectStyle": "PackageReference",
@@ -136,6 +136,10 @@
             "DotNetSeleniumExtras.PageObjects.Core": {
               "target": "Package",
               "version": "[4.14.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
